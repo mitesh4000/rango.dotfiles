@@ -1,0 +1,11 @@
+q
+live-filter 
+add ~/Music/
+cd Music/
+Music
+fset mp3=filename="*.mp3"
+fset classical=genre="Classical"
+bind -f common <space> player-pause
+cd music
+colorscheme gruvbox
+colorscheme grouvbox
