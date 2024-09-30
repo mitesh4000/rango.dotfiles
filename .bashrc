@@ -129,4 +129,5 @@ fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 . "$HOME/.cargo/env"
-
+export PATH="$PATH:/opt/nvim-linux64/bin"
+export PATH=$PATH:/usr/local/go/bin
