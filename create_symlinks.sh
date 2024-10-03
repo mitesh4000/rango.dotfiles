@@ -9,6 +9,7 @@ declare -A symlinks=(
     ["~/.dotfiles/lf"]="~/.config/lf"
     ["~/.dotfiles/nvim"]="~/.config/nvim"
     ["~/.dotfiles/.bashrc"]="~/.bashrc"
+    ["~/.dotfiles/dunst"]="~/.config/dunst"
 )
 
 # Create symlinks
