@@ -6,13 +6,13 @@ import = [
 size = 8
 
 [font.bold]
-family = "jetBrains Mono"
+family = "IosevkaTerm NFM"
 
 [font.italic]
-family = "jetBrains Mono"
+family = "IosevkaTerm NFM"
 
 [font.normal]
-family = "jetBrains Mono"
+family = "IosevkaTerm NFM"
 style = "Regular"
 
 [window]

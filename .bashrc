@@ -85,6 +85,9 @@ alias apr='sudo apt autoremove'
 alias cons='ssh root@45.79.126.76'
 alias bset='sudo brightnessctl set'
 alias d='dict'
+#github alias
+alias gts='git status'
+
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -104,6 +107,7 @@ fi
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 . "$HOME/.cargo/env"
 export PATH="$PATH:/opt/nvim-linux64/bin"
-export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$PATH:/usr/share/go
+
 
 export PATH=~/.npm-global/bin:$PATH
