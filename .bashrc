@@ -87,6 +87,7 @@ alias bset='sudo brightnessctl set'
 alias d='dict'
 #github alias
 alias gts='git status'
+alias gc='git clone'
 
 
 if [ -f ~/.bash_aliases ]; then
@@ -107,7 +108,7 @@ fi
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 . "$HOME/.cargo/env"
 export PATH="$PATH:/opt/nvim-linux64/bin"
-export GOPATH=$PATH:/usr/share/go
+export PATH=$PATH:$(go env GOPATH)/bin
 
 
 export PATH=~/.npm-global/bin:$PATH
