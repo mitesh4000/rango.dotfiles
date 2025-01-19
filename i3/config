@@ -377,6 +377,9 @@ mode "$mode_gaps_outer" {
 
 #if you want transparency on non-focused windows, ...
 exec_always --no-startup-id picom 
+exec_always --no-startup-id nm-appler
+exec_always --no-startup-id code
+exec_always --no-startup-id firefox
 exec_always --no-startup-id feh --randomize --bg-fill ~/.wallpapers
 exec_always --no-startup-id ~/.config/i3/scripts/mouse.sh
 

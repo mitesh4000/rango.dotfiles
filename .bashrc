@@ -88,6 +88,11 @@ alias d='dict'
 #github alias
 alias gts='git status'
 alias gc='git clone'
+alias con='sudo ssh -i .mitesh4000.pem ubuntu@13.60.253.227'
+alias note='vim .notes.txt'
+alias ytd10='yt-dlp -f "bestvideo[height<=1080]+bestaudio/best[height<=1080]" --write-sub --sub-lang en --merge-output-format mp4'
+alias ytd4='yt-dlp -f "bestvideo[height<=480]+bestaudio/best[height<=1080]" --write-sub --sub-lang en --merge-output-format mp4'
+alias ytd7='yt-dlp -f "bestvideo[height<=720]+bestaudio/best[height<=1080]" --write-sub --sub-lang en --merge-output-format mp4'
 
 
 if [ -f ~/.bash_aliases ]; then
