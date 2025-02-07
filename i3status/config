@@ -15,6 +15,7 @@ general {
 }
 
 # order += "ipv6"
+
 order += "volume master"
 order += "wireless _first_"
 # order += "ethernet _first_"
@@ -80,3 +81,7 @@ memory {
 tztime local {
         format = "    %a %d-%m-%Y      %H:%M  "
 }
+
+
+
+

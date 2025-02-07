@@ -37,10 +37,6 @@ case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
 
-# uncomment for a colored prompt, if the terminal has the capability; turned
-# off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt
-#force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -52,12 +48,12 @@ if [ -n "$force_color_prompt" ]; then
 	color_prompt=
     fi
 fi
+source ~/.git-prompt.sh
 
 if [ "$color_prompt" = yes ]; then
-    PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 " (%s)")'; PS1='\[\e[38;5;166m\]┏━[\[\e[38;5;148m\]\u\[\e[38;5;166m\]]\[\e[38;5;111;3m\]\w\[\e[0;38;5;227m\]${PS1_CMD1}\n\[\e[38;5;166m\]┗━━━=> \[\e[0m\]'
+    PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 "(%s)")'; PS1='\[\e[38;5;166m\]┏━[\[\e[38;5;148m\]\u\[\e[38;5;166m\]]\[\e[38;5;111;3m\]\w\[\e[0;38;5;227m\]${PS1_CMD1}\n\[\e[38;5;166m\]┗━━━=> \[\e[0m\]'
 else
-#    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 " (%s)")'; PS1='\[\e[38;5;166m\]┏━[\[\e[38;5;148m\]\u\[\e[38;5;166m\]]\[\e[38;5;111;3m\]\w\[\e[0;38;5;227m\]${PS1_CMD1}\n\[\e[38;5;166m\]┗━━━=>\[\e[0m\]'
+    PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 "(%s)")'; PS1='\[\e[38;5;166m\]┏━[\[\e[38;5;148m\]\u\[\e[38;5;166m\]]\[\e[38;5;111;3m\]\w\[\e[0;38;5;227m\]${PS1_CMD1}\n\[\e[38;5;166m\]┗━━━=>\[\e[0m\]'
 fi
 unset color_prompt force_color_prompt
 
@@ -111,7 +107,6 @@ if ! shopt -oq posix; then
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-. "$HOME/.cargo/env"
 export PATH="$PATH:/opt/nvim-linux64/bin"
 export PATH=$PATH:$(go env GOPATH)/bin
 
