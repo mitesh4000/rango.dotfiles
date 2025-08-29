@@ -1,33 +1,17 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [./hardware-configuration.nix];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
   time.timeZone = "Asia/Kolkata";
 
-  # Select internationalisation properties.
 # Select internationalisation properties.
 i18n.defaultLocale = "en_US.UTF-8";
 
@@ -42,9 +26,6 @@ i18n.extraLocaleSettings = {
   LC_TELEPHONE = "en_US.UTF-8";
   LC_TIME = "en_US.UTF-8";
 };
-
-
-
 
  # Enable the X11 windowing system.
   services.xserver = {
@@ -62,7 +43,7 @@ i18n.extraLocaleSettings = {
   };
 
 
-    services.displayManager = {
+services.displayManager = {
       defaultSession = "none+i3";
     };
   #services.xserver.enable = true;
@@ -77,12 +58,6 @@ i18n.extraLocaleSettings = {
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -106,18 +81,85 @@ i18n.extraLocaleSettings = {
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-	  wget
-    #gemini-cli
+environment.systemPackages = with pkgs; [
+    #-- Essentials --
+    zip
+    unzip
+    wget
+    networkmanagerapplet
+    git
+    alacritty
+    brightnessctl
+    firefox
+    curl
     fish
-    sqlitebrowser
+    fzf
+    acpi
+    
+    #-- Dev tools ---
+    xclip
     rustup
-    fd
+    sqlitebrowser
+    postgresql
+    postman
+    nodejs
+    
+    #-- Rust packages ---
+    cargo
     zellij
     bacon
-    acpi
-    alsa-utils
+
+    #-- window manager ----
+    dmenu
+    i3
+
+    #-- Additional packages --
+    ani-cli # cli anime searies surfer 
+    bash-completion
+    #calibre
+    #dropbox
+    fd
+    gcc
+    # gimp
+    gnumake
+    go
+    graphite-cursors
+    gscreenshot
+    htop
+    hugo
+    jmtpfs 
+    kitty
+    lazygit # rust based cli git client
+    lf 
+    # libreoffice
+    lua
+    lua-language-server
+    luarocks #package manager fo luarocks
+    lxappearance
+    # mongodb-compass
+    neofetch
+    neovim
+    nerdfonts
+
+    # -- building package --
+    ninja # build system to reduce build time 
+    pkg-config #it tells the compiler where to find header files and what libraries to link against.
+    
+    # obsidian
+    openssl
+    picom
+    pulseaudio
+    qbittorrent
+    ripgrep
+    (rofi.override { waylandSupport = true; }) # For wayland support
+    thunar
+    vlc
+    vscodium
+    yaru-theme
+    yazi
+    yt-dlp
+    zathura
+
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
