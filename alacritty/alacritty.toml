@@ -1,16 +1,16 @@
-
 [font]
-size = 10
+size = 8
 
 [font.bold]
-
-family = "Monofur Nerd Font"
+family = "JetBrainsMono Nerd Font Mono"
+style = "Bold"
 
 [font.italic]
-family = "Monofur Nerd Font"
+family = "JetBrainsMono Nerd Font Mono"
+style = "Italic"
 
 [font.normal]
-family = "Monofur Nerd Font"
+family = "JetBrainsMono Nerd Font Mono"
 style = "Regular"
 
 [window]
@@ -22,5 +22,5 @@ y = 5
 
 [general]
 import = [
-    "~/.config/alacritty/themes/themes/ayu_dark.toml"
+    "~/.config/alacritty/themes/themes/grovbox_dark.toml"
 ]
