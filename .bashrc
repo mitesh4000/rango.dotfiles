@@ -46,7 +46,6 @@ if [ -n "$force_color_prompt" ]; then
     color_prompt=
   fi
 fi
-source ~/.git-prompt.sh
 
 if [ "$color_prompt" = yes ]; then
   PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 "(%s)")'

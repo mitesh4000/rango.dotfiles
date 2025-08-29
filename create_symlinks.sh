@@ -3,7 +3,6 @@
 # Define an associative array of source and target directories
 declare -A symlinks=(
   ["~/.dotfiles/alacritty"]="~/.config/alacritty"
-  ["~/.dotfiles/cmus"]="~/.config/cmus"
   ["~/.dotfiles/i3"]="~/.config/i3"
   ["~/.dotfiles/i3status"]="~/.config/i3status"
   ["~/.dotfiles/lf"]="~/.config/lf"
